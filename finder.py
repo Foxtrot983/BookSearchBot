@@ -1,4 +1,3 @@
-import time
 from bs4 import BeautifulSoup
 import requests
 
@@ -59,18 +58,7 @@ def find_books(string: str):
         download_links.append(done_link) #almost downloadable link
         #print
         a += 1
-    #print(download_links)
-    #print(names)
-    #print(pages)
-    #print(languages)
-    #print(download_links)
-    
-    #Название - Автор - Кол-во страниц - Автор - Язык
-    #results = [names,pages,languages,download_links]
     result = list(zip(names, pages, languages))
-    #print(result)
-    #time.sleep(5)
-    #print(download_links)
     return result, download_links
 
 

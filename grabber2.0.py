@@ -15,14 +15,9 @@ HEADERS = {
 def get_download_url(url: str):
     response = requests.get(url, headers=HEADERS)
 
-
-    #print(response.text)
     soup = BeautifulSoup(response.text, "html.parser")
     print(soup.find("a", class_="btn-user"))
     pass
-    #download_url = href
-    #return download_url
-
 
 if __name__ == "__main__":
     get_download_url("https://ru.pdfdrive.com/Освой-самостоятельно-c-по-одному-часу-в-день-d183944321.html")

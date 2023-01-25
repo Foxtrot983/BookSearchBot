@@ -1,8 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
-#import time
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options)
@@ -18,10 +16,7 @@ def grab_book(url: str):
     except:
         print("Failed!")
         driver.close()
-    #try:
     element = driver.find_element(By.CLASS_NAME, "btn-user")
-    #except :
-    #    print(err)
     link = element.get_attribute("href").split("&")
     driver.close()
     driver.quit()
